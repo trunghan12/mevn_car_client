@@ -2,20 +2,20 @@
     <div>
         <div id="header1">
             <nav  class="navbar navbar-expand-lg navbar-light bg-light position-fixed fixed-top px-5" style="box-shadow: 0 0 10px rgba(0,0,0,0.2);">
-                <a @click="handlerClickLogo($event)" class="navbar-brand" href="#"><img src="@/assets/images/logo.png" alt=""></a>
+                <a @click="handlerClickLogo($event)" class="navbar-brand"><img src="@/assets/images/logo.png" alt=""></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item active">
-                            <a class="nav-link" @click="handlerClickHome($event)">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-link" style="cursor:pointer" @click="handlerClickHome($event)">Home <span class="sr-only">(current)</span></a>
                         </li>                       
                         <li class="nav-item">
-                            <a class="nav-link" @click="handlerClickAbout($event)">About Us</a>
+                            <a class="nav-link" style="cursor:pointer" @click="handlerClickAbout($event)">About Us</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" @click="handlerClickContact($event)">Contact Us</a>
+                            <a class="nav-link" style="cursor:pointer" @click="handlerClickContact($event)">Contact Us</a>
                         </li>
                         
                     </ul>
@@ -53,7 +53,7 @@ export default{
         },
         handlerClickContact(e){
             e.preventDefault()
-            this.getListBlog()
+            this.getListBlog(1)
             this.$router.push({name:'contact'})
         },  
         handlerClickLogin(e){
@@ -62,7 +62,7 @@ export default{
         },
         handlerClickLogo(e){
             e.preventDefault()
-            this.getListBlog()
+            this.getListBlog(1)
             this.$router.push({name: "home"})
 
         },
@@ -94,7 +94,7 @@ export default{
             e.preventDefault()
             this.$router.push({name:'postblog'})
         },
-        ...mapActions(['getListCategory','getListBlog'])
+        ...mapActions(['getListCategory','getListBlog','getAllBlog'])
     },
     created(){
         const token = this.getCookie('token')
@@ -104,6 +104,10 @@ export default{
         }
         store.commit('UPDATE_AUTH', isAuth)
         this.getListCategory()
+        this.getAllBlog()
+    },
+    updated(){
+        this.getAllBlog()
     }
 }
 </script>

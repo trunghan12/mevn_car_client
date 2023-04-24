@@ -11,7 +11,8 @@ const store = createStore({
       },
       auth: {
         isAuthentication: false,
-      }
+      },
+      length_blog: 0,
     }
   },
   mutations: {
@@ -38,15 +39,26 @@ const store = createStore({
     },
     GET_LIST_CATEGORY(state,data){
       state.list_category = data
+    },
+    UPDATE_LENGTH_BLOG(state, data){
+      state.length_blog = data.length
     }
   },
   actions: {
-    async getListBlog({commit}){
+    async getListBlog({commit},page){
       try{
-        const response = await axios.get('http://localhost:3000/api/blog')
+        const response = await axios.get('http://localhost:3000/api/blog?page='+page)
         commit('GETLISTBLOG',response.data)
       }catch(error){
           console.log("Loi action getListBlog")
+      }
+    },
+    async getAllBlog({commit}){
+      try{
+        const response = await axios.get('http://localhost:3000/api/blog')
+        commit('UPDATE_LENGTH_BLOG',response.data)
+      }catch(error){
+          console.log("Loi action getAllBlog")
       }
     },
     async addNewBlog({commit},data){

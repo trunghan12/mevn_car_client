@@ -14,16 +14,14 @@
             </div>
         </div>
 
-        <!-- <div>
+        <div>
             <nav aria-label="Page navigation example">
                 <ul class="pagination">
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item"><a class="page-link" href="#">Next</a></li>
+                  <!-- <li class="page-item"><a class="page-link" href="#">1</a></li> -->
+                  <li v-for="item in length_all_blog" @click="handlerClickChangePage(item)" :key="item" class="page-item"><a class="page-link">{{ item }}</a></li>
                 </ul>
             </nav>
-        </div> -->
+        </div>
     </div>
 </template>
 
@@ -39,6 +37,10 @@ export default{
     computed: {
         listblog(){
             return store.state.list_blog
+        },
+        length_all_blog(){
+            const quantity = store.state.length_blog
+            return Math.ceil(quantity/4);
         }
     },
     methods: {
@@ -46,10 +48,14 @@ export default{
         handlerBlogDetail(id){
             this.getBlogDetail(id)
             this.$router.push({name: "blogdetail",params: {id: id}})
+        },
+        handlerClickChangePage(page){
+            this.getListBlog(page)
         }
     },
     created(){
-        this.getListBlog()
+        this.getListBlog(1)
+        
     },
     updated(){
         

@@ -51,7 +51,7 @@ export default{
     name: 'ListBlog',
     computed: {
         listblog(){
-            this.getListBlog()
+            this.getListBlog(1)
             return store.state.list_blog
         }
     },
