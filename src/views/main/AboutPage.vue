@@ -4,11 +4,12 @@
         <SlideApp />
         <div class="jumbotron p-3 p-md-5 text-white rounded bg-dark">
             <div class="col-md-6 px-0">
-              <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-              <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what's most interesting in this post's contents.</p>
-              <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+                <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
+                <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and
+                    efficiently about what's most interesting in this post's contents.</p>
+                <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
             </div>
-          </div>
+        </div>
         <FooterApp />
     </div>
 </template>
@@ -17,7 +18,7 @@
 import HeaderApp from '../../components/main/HeaderApp.vue'
 import FooterApp from '../../components/main/FooterApp.vue'
 import SlideApp from '../../components/main/SlideApp.vue'
-export default{
+export default {
     name: "ContactPage",
     components: {
         HeaderApp,
@@ -28,5 +29,49 @@ export default{
 </script>
 
 <style scoped>
-.mapouter{position:relative;text-align:right;width:100%;height:400px;}.gmap_canvas {overflow:hidden;background:none!important;width:100%;height:400px;}.gmap_iframe {width:100%!important;height:400px!important;}
-</style>
+.mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_canvas {
+    overflow: hidden;
+    background: none !important;
+    width: 100%;
+    height: 400px;
+}
+
+.gmap_iframe {
+    width: 100% !important;
+    height: 400px !important;
+}
+
+#gap-1386786008 {
+    padding-top: 30px;
+}
+
+#gap-671574403 {
+    padding-top: 30px;
+}
+
+#gap-1732351229 {
+    padding-top: 30px;
+}
+
+#image_1923926324 {
+    width: 100%;
+}
+
+#image_1348307301 {
+    width: 100%;
+}
+
+#image_1589852720 {
+    width: 100%;
+}
+
+#gap-1601041560 {
+    padding-top: 30px;
+}</style>

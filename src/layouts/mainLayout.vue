@@ -1,4 +1,5 @@
 <template>
+    <!-- style="background: #fef5ef!important;" -->
     <div id="demo" class="" style="background: #fef5ef!important;">
         <HeaderApp />
         <div style="margin-top: 64px"></div>
@@ -35,7 +36,7 @@ export default{
 <!-- <style scoped>
 #demo{
     opacity: 0.8;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(https://media.baodansinh.vn/baodansinh/2020/11/26/photo-1606393749356-16063937493641669154530.jpg);
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%), url(https://cdn.pixabay.com/photo/2019/07/24/23/09/car-4361321__340.jpg);
     background-position: center;
 }
 </style> -->
